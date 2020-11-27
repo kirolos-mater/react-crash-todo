@@ -45,7 +45,7 @@ class App extends Component{
   // Add Todo
   addTodo = (title) => {
     const newTodo = {
-      id: 4,
+      id: Math.floor(Math.random() * 1000),
       title,
       completed: false,
     };
