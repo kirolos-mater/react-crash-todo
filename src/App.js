@@ -10,17 +10,17 @@ class App extends Component{
   state = {
     todos: [
       {
-        id: 1,
+        id: Math.floor(Math.random() * 1000000000),
         title: 'Take out the trash',
         completed: false,
       },
       {
-        id: 2,
+        id: Math.floor(Math.random() * 1000000000),
         title: 'Dinner with wife',
         completed: true,
       },
       {
-        id: 3,
+        id: Math.floor(Math.random() * 1000000000),
         title: 'Meeting with boss',
         completed: false,
       },
@@ -45,7 +45,7 @@ class App extends Component{
   // Add Todo
   addTodo = (title) => {
     const newTodo = {
-      id: Math.floor(Math.random() * 1000),
+      id: Math.floor(Math.random() * 1000000000),
       title,
       completed: false,
     };
