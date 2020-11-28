@@ -5,28 +5,23 @@ import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import About from './components/pages/About';
 import Header from './components/layout/Header';
+import axios from 'axios';
 import './App.css';
 
 class App extends Component{
 
   state = {
     todos: [
-      {
-        id: Math.floor(Math.random() * 1000000000),
-        title: 'Take out the trash',
-        completed: false,
-      },
-      {
-        id: Math.floor(Math.random() * 1000000000),
-        title: 'Dinner with wife',
-        completed: true,
-      },
-      {
-        id: Math.floor(Math.random() * 1000000000),
-        title: 'Meeting with boss',
-        completed: false,
-      },
+
     ]
+  }
+
+  componentDidMount() {
+    axios
+    .get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+    .then(res => this.setState({
+      todos: res.data,
+    }))
   }
 
   // Toggle Complete
